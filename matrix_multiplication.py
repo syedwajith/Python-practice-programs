@@ -1,6 +1,5 @@
 def matrix_multiplication(matrix1, matrix2):
     result = []
-    final_res = []
     for i in range(len(matrix1)):
         for k in range(len(matrix2[0])):
             a = 0

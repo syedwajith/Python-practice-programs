@@ -1,11 +1,11 @@
 def selection_sort(arr):
     n = len(arr)
-    for i in range(n):
-        min_index = i
-        for j in range(i+1,n):
-            if min_index > j:
-                min_index = j
-        arr[i], arr[min_index] = arr[min_index], arr[i]
+    for i in arr.keys():
+        min_key = i
+        for j in arr.keys():
+            if min_key > j:
+                min_key = j
+        arr[i], arr[min_key] = arr[min_key], arr[i]
 
     return arr
 

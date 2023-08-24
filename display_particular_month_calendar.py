@@ -1,10 +1,11 @@
 from calendar import *
 
-def cal(y):
+def cal(y,m):
     p = TextCalendar(6)
-    cal = p.formatyear(y)
+    cal = p.formatmonth(y,m)
     return cal
 
 y = int(input("Year : "))
-res = cal(y)
+m = int(input("Month : "))
+res = cal(y,m)
 print(res)

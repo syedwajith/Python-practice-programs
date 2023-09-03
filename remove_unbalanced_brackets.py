@@ -3,13 +3,13 @@ def rem_par(s):
     final_val = ""
     current_str = ""
     for i in s:
-        if i == '[' or i == '(' or i == '{':
+        if i == '(':
             stack.append(i)
         else:
             if stack:
                 current_par = stack.pop()
 
-            if i == ']' or i == ')' or i == '}':
+            if i == ')':
                 if len(current_str) == 0:
                     final_val = current_par + final_val + i
                 else:

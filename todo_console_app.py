@@ -46,33 +46,29 @@ class ToDo:
                 print(f"Date : {self.tasks[i]['date']}")
 
     def delete_task(self, phone_no, password, op):
+        success = False
+
         if op == "1":
-            try:
-                for i in range(len(self.tasks)):
-                    if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
-                        self.tasks.remove(self.tasks[i])
-                return True
-            except:
-                return False
-            
+            for i in range(len(self.tasks)):
+                if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
+                    success = True
+                    self.tasks.remove(self.tasks[i])
+
         elif op == "2":
-            try:
-                for i in range(len(self.tasks)):
-                    if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
-                        self.tasks.remove(self.tasks[i])
-                        break
-            except:
-                return False
+            for i in range(len(self.tasks)):
+                if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
+                    success = True
+                    self.tasks.remove(self.tasks[i])
+                    break
 
         elif op == "3":
-            try:
-                for i in range(len(self.tasks)-1, -1, -1):
-                    if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
-                        self.tasks.remove(self.tasks[i])
-                        break
-                return True
-            except:
-                return False
+            for i in range(len(self.tasks)-1, -1, -1):
+                if self.tasks[i]["phone_no"] == phone_no and self.tasks[i]["password"] == password:
+                    success = True
+                    self.tasks.remove(self.tasks[i])
+                    break
+
+        return success
 
 def main():
     todo = ToDo()
@@ -190,7 +186,7 @@ def main():
                                 os.system("cls")
                                 print("All tasks are deleted successfully!!!")
                             else:
-                                print(None)
+                                print("Task is not available...")
 
                         elif op == "2":
                             delete_val = todo.delete_task(phone_no, password, op)
@@ -198,7 +194,7 @@ def main():
                                 os.system("cls")
                                 print("First task deleted successfully!!!")
                             else:
-                                print(None)
+                                print("Task is not available...")
 
                         elif op == "3":
                             delete_val = todo.delete_task(phone_no, password, op)
@@ -206,7 +202,7 @@ def main():
                                 os.system("cls")
                                 print("Last task deleted successfully!!!")
                             else:
-                                print(None)
+                                print("Task is not available...")
 
                         elif op == "4":
                             os.system("cls")

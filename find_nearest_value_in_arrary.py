@@ -16,11 +16,10 @@ def nearest_value(n, arr, m):
     for i in range(n):
         if m >= sort_arr[i]:
             min_val = sort_arr[i]
-    
-    for i in range(n):
-        if m <= sort_arr[i]:
-            max_val = sort_arr[i]
-            break
+        else:
+            if m <= sort_arr[i]:
+                max_val = sort_arr[i]
+                break
 
     a = m - min_val
     b = max_val - m
